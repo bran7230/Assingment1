@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let button5 = document.querySelector("#button5");
 
 
-    function random()
-    {
+    function random() {
         return Math.floor(Math.random() * (5 - 1 + 1) + 1);
     }
 
@@ -23,31 +22,27 @@ document.addEventListener("DOMContentLoaded", function () {
         output.textContent = word1[rand]
     }
 
-    function updateWord2()
-    {
+    function updateWord2() {
         let rand = random();
         output.textContent = word2[rand];
     }
 
-     function updateWord3()
-    {
+    function updateWord3() {
         let rand = random();
         output.textContent = word3[rand];
     }
 
-     function updateWord4()
-    {
+    function updateWord4() {
         let rand = random();
         output.textContent = word4[rand];
     }
 
-     function updateWord5()
-    {
+    function updateWord5() {
         let rand = random();
         output.textContent = word5[rand];
     }
 
-   
+
 
     button1.addEventListener("click", updateWord1);
     button2.addEventListener("click", updateWord2);
