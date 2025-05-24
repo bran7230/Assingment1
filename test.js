@@ -19,27 +19,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateWord1() {
         let rand = random();
-        output.textContent = word1[rand]
+        output.textContent += word1[rand] + " ";
     }
 
     function updateWord2() {
         let rand = random();
-        output.textContent = word2[rand];
+        output.textContent += word2[rand] + " ";
     }
 
     function updateWord3() {
         let rand = random();
-        output.textContent = word3[rand];
+        output.textContent += word3[rand] + " ";
     }
 
     function updateWord4() {
         let rand = random();
-        output.textContent = word4[rand];
+        output.textContent += word4[rand] + " ";
     }
 
     function updateWord5() {
         let rand = random();
-        output.textContent = word5[rand];
+        output.textContent += word5[rand] + " ";
     }
 
 
