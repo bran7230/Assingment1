@@ -1,0 +1,47 @@
+.button-1{
+    border-radius: 50%;
+    background-color: rgb(139, 13, 139);
+    padding:10px;
+    height: 7em;
+    width: 4em;
+
+}
+
+.button-2{
+    border-radius: 50%;
+    background-color: rgb(104, 150, 235);
+    padding:10px;
+    height: 7em;
+    width: 4em;
+
+}
+
+
+.button-3{
+    border-radius: 50%;
+    background-color: rgb(73, 196, 62);
+    padding:10px;
+    height: 7em;
+    width: 4em;
+
+}
+
+
+.button-4{
+    border-radius: 50%;
+    background-color: rgb(197, 100, 8);
+    padding:10px;
+    height: 7em;
+    width: 4em;
+
+}
+
+
+.button-5{
+    border-radius: 50%;
+    background-color: rgb(199, 15, 199);
+    padding:10px;
+    height: 7em;
+    width: 4em;
+
+}
