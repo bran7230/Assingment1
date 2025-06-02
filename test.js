@@ -39,30 +39,51 @@ document.addEventListener("DOMContentLoaded", function () {
     let word5Count = 0; //Counter for word5
     //Function to reset the output text
 
+    // Get all verb lists
+    const verbLists = document.querySelectorAll('.verb-list');
+
+    // Function to highlight the selected word in the verb list
+    function highlightWord(listIndex, wordIndex) {
+        const list = verbLists[listIndex];
+        const items = list.querySelectorAll('.verb');
+        items.forEach((li, idx) => {
+            if (idx === wordIndex) {
+                li.classList.add('selected');
+            } else {
+                li.classList.remove('selected');
+            }
+        });
+    }
+
     function resetOutput() {
         output.textContent = "";
+        //Remove the 'selected' class from all verbs in all lists
+        verbLists.forEach(list => {
+            list.querySelectorAll('.verb').forEach(li => li.classList.remove('selected'));
+        });
     }
 
-
-    //Functions to update the counters for each word list, and when they call the "Playback" function, they will cycle through the words in the list(Indexs)
+    //Functions to update the output with the next word in each list
+    //These functions also highlight the selected word in the verb list
     function updateWord1() {
-        word1Count++;
+        word1Count = (word1Count + 1) % word1.length;
+        highlightWord(0, word1Count);
     }
-
     function updateWord2() {
-        word2Count++
+        word2Count = (word2Count + 1) % word2.length;
+        highlightWord(1, word2Count);
     }
-
     function updateWord3() {
-        word3Count++;
+        word3Count = (word3Count + 1) % word3.length;
+        highlightWord(2, word3Count);
     }
-
     function updateWord4() {
-        word4Count++;
+        word4Count = (word4Count + 1) % word4.length;
+        highlightWord(3, word4Count);
     }
-
     function updateWord5() {
-        word5Count++;
+        word5Count = (word5Count + 1) % word5.length;
+        highlightWord(4, word5Count);
     }
 
     function supriseMe() {
@@ -82,6 +103,11 @@ document.addEventListener("DOMContentLoaded", function () {
         word3Count = 0;
         word4Count = 0;
         word5Count = 0;
+
+        //Remove the 'selected' class from all verbs in all lists
+          verbLists.forEach(list => {
+            list.querySelectorAll('.verb').forEach(li => li.classList.remove('selected'));
+        });
     }
 
     function playback() {
@@ -89,6 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
         //Construct the sentence using the current counts of each word list
         //This will ensure that the words are selected based on the current count, cycling through the lists
         output.textContent = `${word1[word1Count % word1.length]} ${word2[word2Count % word2.length]} ${word3[word3Count % word3.length]} ${word4[word4Count % word4.length]} ${word5[word5Count % word5.length]}.`;
+        //remove the higlights from the words in each verb list
+          verbLists.forEach(list => {
+            list.querySelectorAll('.verb').forEach(li => li.classList.remove('selected'));
+        });
     }
 
     //Adding event listeners to the buttons to call the respective update functions when clicked

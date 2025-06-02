@@ -162,3 +162,10 @@ p{
     font-size: 1.2em;
     cursor: pointer;
 }
+
+.selected {
+    background-color: rgba(185, 124, 241, 0.521);
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+}
