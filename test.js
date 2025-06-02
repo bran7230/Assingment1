@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     //Elements in the HTML, where the words will be displayed and buttons to trigger updates
     let output = document.querySelector("#out1");
 
+    let start = document.querySelector("#start");
+
     let button1 = document.querySelector("#button1");
 
     let button2 = document.querySelector("#button2");
@@ -22,6 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
     let button4 = document.querySelector("#button4");
 
     let button5 = document.querySelector("#button5");
+
+    let suprise = document.querySelector("#suprise");
+
+    let reset = document.querySelector("#reset");
+    //Function to reset the output text
+
+    function resetOutput() {
+        output.textContent = "";
+    }
 
     //Function to generate a random number between 1 and x (inclusive)
     function random(x) {
@@ -54,6 +65,16 @@ document.addEventListener("DOMContentLoaded", function () {
         output.textContent += word5[rand] + " ";
     }
 
+    function supriseMe() {
+        //This function generates a random sentence by calling all update functions
+        output.textContent = ""; //Clear previous output
+        updateWord1();
+        updateWord2();
+        updateWord3();
+        updateWord4();
+        updateWord5();
+    }
+
 
     //Adding event listeners to the buttons to call the respective update functions when clicked
     button1.addEventListener("click", updateWord1);
@@ -61,6 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
     button3.addEventListener("click", updateWord3);
     button4.addEventListener("click", updateWord4);
     button5.addEventListener("click", updateWord5);
-
+    suprise.addEventListener("click", supriseMe);
+    reset.addEventListener("click", resetOutput);
+    //Initial output
+    start.textContent = "Click a button to start the game!";
 });
 
