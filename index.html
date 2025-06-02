@@ -1,33 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>Assingment</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link href="style.css" rel="stylesheet" />
-	<script src="test.js" defer></script>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assingment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="test.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <p>Click the buttons to create a funny sentence!</p>
+      <p>Click the "Suprise me!" button for a random sentence.</p>
+      <p>Click the "Reset" button to start over.</p>
+    </header>
+    <!--Main or first button group-->
+    <div class="buttons">
+      <div class="button-group">
+        <button id="button1" class="button button-1"></button>
+        <!--Word display under buttons-->
+        <ul class="verb-list">
+          <li class="verb">The Turkey</li>
+          <li class="verb">Mom</li>
+          <li class="verb">Dad</li>
+          <li class="verb">The dog</li>
+          <li class="verb">My teacher</li>
+          <li class="verb">The elephant</li>
+          <li class="verb">The cat</li>
+        </ul>
+      </div>
 
+      <!--Second button group-->
+      <div class="button-group">
+        <button id="button2" class="button button-2"></button>
+        <!--Word display under buttons-->
+        <ul class="verb-list">
+          <li class="verb">sat on</li>
+          <li class="verb">ate</li>
+          <li class="verb">danced with</li>
+          <li class="verb">saw</li>
+          <li class="verb">doesn't like</li>
+          <li class="verb">kissed</li>
+        </ul>
+      </div>
 
-<div class="buttons">
-<button id="button1" class="button button-1"></button>
-<button id="button2" class="button button-2"></button>
-<button id="button3" class="button button-3"></button>
-<button id="button4" class="button button-4"></button>
-<button id="button5" class="button button-5"></button>
-</div>
-<div class="buttons">
-<button id="suprise" class="suprise">Suprise me!</button>
-<button id="reset" class="reset">Reset</button>
-</div>
-<div class="game">
-	<div class="game-text">
-		<p id="out1"></p>
-	</div>
+      <!--Third button group-->
+      <div class="button-group">
+        <button id="button3" class="button button-3"></button>
+        <!--Word display under buttons-->
+        <ul class="verb-list">
+          <li class="verb">a funny</li>
+          <li class="verb">a scary</li>
+          <li class="verb">a goofy</li>
+          <li class="verb">a slimy</li>
+          <li class="verb">a barking</li>
+          <li class="verb">a fat</li>
+        </ul>
+      </div>
 
-<p id="start">Click the button to start the game!</p>
-</div>
+      <!--Fourth button group-->
+      <div class="button-group">
+        <button id="button4" class="button button-4"></button>
+        <!--Word display under buttons-->
+        <ul class="verb-list">
+          <li class="verb">goat</li>
+          <li class="verb">monkey</li>
+          <li class="verb">fish</li>
+          <li class="verb">cow</li>
+          <li class="verb">frog</li>
+          <li class="verb">bug</li>
+          <li class="verb">worm</li>
+        </ul>
+      </div>
 
-</body>
+      <!--Fifth button group-->
+      <div class="button-group">
+        <button id="button5" class="button button-5"></button>
+        <!--Word display under buttons-->
+        <ul class="verb-list">
+          <li class="verb">on the moon</li>
+          <li class="verb">on the chair</li>
+          <li class="verb">in my spaghetti</li>
+          <li class="verb">in my soup</li>
+          <li class="verb">on the grass</li>
+          <li class="verb">in my shoes</li>
+        </ul>
+      </div>
+    </div>
+    <!--End of first button group-->
+
+    <!--Second button group for surprise and reset and playback-->
+    <div class="buttons">
+      <button id="suprise" class="button suprise">Suprise me!</button>
+      <button id="reset" class="button reset">Reset</button>
+      <button id="playback" class="button playback">Playback</button>
+    </div>
+    <!--End of second button group-->
+    <!--Output section for the game-->
+    <div class="game">
+      <div class="game-text">
+        <p id="out1"></p>
+      </div>
+
+      <p id="start">Click the button to start the game!</p>
+    </div>
+  </body>
 </html>

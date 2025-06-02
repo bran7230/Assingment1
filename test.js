@@ -28,53 +28,68 @@ document.addEventListener("DOMContentLoaded", function () {
     let suprise = document.querySelector("#suprise");
 
     let reset = document.querySelector("#reset");
+
+    let playbackButton = document.querySelector("#playback");
+
+
+    let word1Count = 0; //Counter for word1 to ensure it cycles through the list
+    let word2Count = 0; //Counter for word2
+    let word3Count = 0; //Counter for word3
+    let word4Count = 0; //Counter for word4
+    let word5Count = 0; //Counter for word5
     //Function to reset the output text
 
     function resetOutput() {
         output.textContent = "";
     }
 
-    //Function to generate a random number between 1 and x (inclusive)
-    function random(x) {
-        return Math.floor(Math.random() * x.length);
-    }
-    //Functions to update the output with a random word from each list
-    //Each function corresponds to a button and appends a random word from the respective list to the output
+
+    //Functions to update the counters for each word list, and when they call the "Playback" function, they will cycle through the words in the list(Indexs)
     function updateWord1() {
-        let rand = random(word1);
-        output.textContent += word1[rand] + " ";
+        word1Count++;
     }
 
     function updateWord2() {
-        let rand = random(word2);
-        output.textContent += word2[rand] + " ";
+        word2Count++
     }
 
     function updateWord3() {
-        let rand = random(word3);
-        output.textContent += word3[rand] + " ";
+        word3Count++;
     }
 
     function updateWord4() {
-        let rand = random(word4);
-        output.textContent += word4[rand] + " ";
+        word4Count++;
     }
 
     function updateWord5() {
-        let rand = random(word5);
-        output.textContent += word5[rand] + " ";
+        word5Count++;
     }
 
     function supriseMe() {
         //This function generates a random sentence by calling all update functions
         output.textContent = ""; //Clear previous output
-        updateWord1();
-        updateWord2();
-        updateWord3();
-        updateWord4();
-        updateWord5();
+        //Generate a random index for each word list
+        let randomIndex1 = Math.floor(Math.random() * word1.length);
+        let randomIndex2 = Math.floor(Math.random() * word2.length);
+        let randomIndex3 = Math.floor(Math.random() * word3.length);
+        let randomIndex4 = Math.floor(Math.random() * word4.length);
+        let randomIndex5 = Math.floor(Math.random() * word5.length);
+        //Construct the sentence using the random words
+        output.textContent = `${word1[randomIndex1]} ${word2[randomIndex2]} ${word3[randomIndex3]} ${word4[randomIndex4]} ${word5[randomIndex5]}.`;
+        //Reset the counters to allow for new random selections
+        word1Count = 0;
+        word2Count = 0;
+        word3Count = 0;
+        word4Count = 0;
+        word5Count = 0;
     }
 
+    function playback() {
+        output.textContent = ""; //Clear previous output
+        //Construct the sentence using the current counts of each word list
+        //This will ensure that the words are selected based on the current count, cycling through the lists
+        output.textContent = `${word1[word1Count % word1.length]} ${word2[word2Count % word2.length]} ${word3[word3Count % word3.length]} ${word4[word4Count % word4.length]} ${word5[word5Count % word5.length]}.`;
+    }
 
     //Adding event listeners to the buttons to call the respective update functions when clicked
     button1.addEventListener("click", updateWord1);
@@ -84,6 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     button5.addEventListener("click", updateWord5);
     suprise.addEventListener("click", supriseMe);
     reset.addEventListener("click", resetOutput);
+    playbackButton.addEventListener("click", playback);
     //Initial output
     start.textContent = "Click a button to start the game!";
 });
